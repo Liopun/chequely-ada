@@ -4,15 +4,456 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Example Widget</title>
+    <title>CHEQUELY</title>
+    <style>
+        @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+        @import url("https://fonts.googleapis.com/css?family=Roboto");
+
+        html, body, * {
+          box-sizing: border-box;
+          font-size: 16px;
+        }
+        html, body {
+          height: 100%;
+          text-align: center;
+        }
+        body {
+          padding: 2rem;
+          background: #f8f8f8;
+        }
+
+        h2 {
+          font-family: "Roboto", sans-serif;
+          font-size: 26px;
+          line-height: 1;
+          color: #454cad;
+          margin-bottom: 0;
+        }
+        p {
+          font-family: "Roboto", sans-serif;
+          font-size: 18px;
+          color: #5f6982;
+        }
+
+        .uploaderfront {
+          display: block;
+          clear: both;
+          margin: 0 auto;
+          margin-bottom: 40px !important;
+          width: 100%;
+          max-width: 600px;
+        }
+
+        label {
+            float: left;
+            clear: both;
+            width: 100%;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            background: #fff;
+            border-radius: 7px;
+            border: 3px solid #eee;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        label:hover {
+            float: left;
+            clear: both;
+            width: 100%;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            background: #fff;
+            border-radius: 7px;
+            border: 3px solid #eee;
+            transition: all 0.2s ease;
+            user-select: none;
+            border-color: #454cad;
+        }
+
+        label .hover {
+            float: left;
+            clear: both;
+            width: 100%;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            background: #fff;
+            border-radius: 7px;
+            border: 3px solid #eee;
+            transition: all 0.2s ease;
+            user-select: none;
+            border: 3px solid #454cad;
+            box-shadow: inset 0 0 0 6px #eee;
+        }
+
+        label .hover #start i.fa {
+            float: left;
+            clear: both;
+            width: 100%;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            background: #fff;
+            border-radius: 7px;
+            border: 3px solid #eee;
+            transition: all 0.2s ease;
+            user-select: none;
+            border: 3px solid #454cad;
+            box-shadow: inset 0 0 0 6px #eee;
+            transform: scale(0.8);
+            opacity: 0.3;
+        }
+
+        #start {
+            float: left;
+            clear: both;
+            width: 100%;
+        }
+
+        #start .hidden {
+            float: left;
+            clear: both;
+            width: 100%;
+            display: none;
+        }
+
+        #start i.fa {
+            float: left;
+            clear: both;
+            width: 100%;
+            font-size: 50px;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        #start .hidden {
+            float: left;
+            clear: both;
+            width: 100%;
+            display: none;
+        }
+
+        #start i.fa {
+            float: left;
+            clear: both;
+            width: 100%;
+            font-size: 50px;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        #file-image-front {
+            display: inline;
+            margin: 0 auto 0.5rem auto;
+            width: auto;
+            height: auto;
+            max-width: 180px;
+        }
+
+        #file-image-front .hidden {
+            margin: 0 auto 0.5rem auto;
+            width: auto;
+            height: auto;
+            max-width: 180px;
+            display: none !important;
+        }
+
+        #notimagefront {
+            display: block;
+            float: left;
+            clear: both;
+            width: 100%;
+        }
+
+        #notimagefront .hidden {
+            display: none;
+            float: left;
+            clear: both;
+            width: 100%;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        #start div {
+            margin: 0 0 0.5rem 0;
+            color: #5f6982;
+        }
+        #start .btn {
+            display: inline-block;
+            margin: 0.5rem 0.5rem 1rem 0.5rem;
+            clear: both;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            text-transform: initial;
+            border: none;
+            border-radius: 0.2rem;
+            outline: none;
+            padding: 0 1rem;
+            height: 36px;
+            line-height: 36px;
+            color: #fff;
+            transition: all 0.2s ease-in-out;
+            box-sizing: border-box;
+            background: #454cad;
+            border-color: #454cad;
+            cursor: pointer;
+      }
+
+      .uploaderback {
+          display: block;
+          clear: both;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 600px;
+      }
+
+      label .hover #end i.fa {
+          float: left;
+          clear: both;
+          width: 100%;
+          padding: 2rem 1.5rem;
+          text-align: center;
+          background: #fff;
+          border-radius: 7px;
+          border: 3px solid #eee;
+          transition: all 0.2s ease;
+          user-select: none;
+          border: 3px solid #454cad;
+          box-shadow: inset 0 0 0 6px #eee;
+          transform: scale(0.8);
+          opacity: 0.3;
+      }
+
+      #end {
+          float: left;
+          clear: both;
+          width: 100%;
+      }
+
+      #end .hidden {
+          float: left;
+          clear: both;
+          width: 100%;
+          display: none;
+      }
+
+      #end i.fa {
+          float: left;
+          clear: both;
+          width: 100%;
+          font-size: 50px;
+          margin-bottom: 1rem;
+          transition: all 0.2s ease-in-out;
+      }
+
+      #end .hidden {
+          float: left;
+          clear: both;
+          width: 100%;
+          display: none;
+      }
+
+      #end i.fa {
+          float: left;
+          clear: both;
+          width: 100%;
+          font-size: 50px;
+          margin-bottom: 1rem;
+          transition: all 0.2s ease-in-out;
+      }
+
+      #file-image-back {
+          display: inline;
+          margin: 0 auto 0.5rem auto;
+          width: auto;
+          height: auto;
+          max-width: 180px;
+      }
+
+      #file-image-back .hidden {
+          margin: 0 auto 0.5rem auto;
+          width: auto;
+          height: auto;
+          max-width: 180px;
+          display: none !important;
+      }
+
+      #notimageback {
+          display: block;
+          float: left;
+          clear: both;
+          width: 100%;
+      }
+
+      #notimageback .hidden {
+          display: none;
+          float: left;
+          clear: both;
+          width: 100%;
+      }
+
+      #end div {
+          margin: 0 0 0.5rem 0;
+          color: #5f6982;
+      }
+      #end .btn {
+          display: inline-block;
+          margin: 0.5rem 0.5rem 1rem 0.5rem;
+          clear: both;
+          font-family: inherit;
+          font-weight: 700;
+          font-size: 14px;
+          text-decoration: none;
+          text-transform: initial;
+          border: none;
+          border-radius: 0.2rem;
+          outline: none;
+          padding: 0 1rem;
+          height: 36px;
+          line-height: 36px;
+          color: #fff;
+          transition: all 0.2s ease-in-out;
+          box-sizing: border-box;
+          background: #454cad;
+          border-color: #454cad;
+          cursor: pointer;
+      }
+
+      #file-upload-form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #454cad;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+      }
+      #file-upload-form button:hover, #file-upload-form button:active, #file-upload-form button:focus {
+        background: #454cad;
+      }
+
+      /* Style The Dropdown Button
+      .dropbtn {
+        background-color: #454cad;
+        color: #fff;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        margin: 10px auto;
+        width: 100%;
+      }
+       */
+
+      .select-style {
+          border: none;
+          width: 100%;
+          border-radius: 0px;
+          overflow: hidden;
+          background: #454cad;
+          color: #fff;
+      }
+      
+      .select-style select {
+          padding: 15px 15px;
+          width: 100%;
+          color: #fff;
+          border: none;
+          box-shadow: none;
+          background: #454cad;
+          background-image: none;
+          -webkit-appearance: none;
+      }
+      
+      .select-style select:focus {
+          outline: none;
+      }
+      
+      .amount-input {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+      .amount-input input {
+        background-color: #454cad;
+        color: #fff;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        margin: 10px auto;
+        width: 100%;
+      }
+      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #fff;
+        opacity: 1; /* Firefox */
+      }
+      
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #fff;
+      }
+      
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color: #fff;
+      }
+
+
+    </style>
   </head>
 
   <body>
     <div id="widget-container">
       <div id="widget-input-data">Loading...</div>
-      <input id="input-field">
-      <button id="submit-button">Submit</button>
+
+      <h2>Deposit Your Cheque</h2>
+      <p class="lead">Chequely <b>By Ada</b></p>
+
+      <!-- Upload  -->
+      <form id="file-upload-form" class="uploaderfront">
+        <input id="file-upload-front" type="file" name="fileUploadFront" accept="image/*" />
+        <label for="file-upload-front" id="file-drag-front">
+          <div id="start">
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <div>Front Of Cheque</div>
+            <div id="notimagefront" class="hidden">Please select an image</div>
+            <span id="file-upload-btn-front" class="btn btn-primary">Select an image</span>
+          </div>
+        </label>
+        <br>
+        <input id="file-upload-back" type="file" name="fileUploadBack" accept="image/*" />
+        <label for="file-upload-back" id="file-drag-back">
+          <div id="end">
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <div>Back Of Cheque</div>
+            <div id="notimageback" class="hidden">Please select an image</div>
+            <span id="file-upload-btn-back" class="btn btn-primary">Select an image</span>
+          </div>
+        </label>
+        <br>
+        <div class="amount-input"><input id="input-field" type="number" placeholder="Amount 0.00" /></div>
+        <div class="dropdown select-style">
+          <select>
+            <option value="0">Deposit Into:</option>
+            <option value="1">Chequing Account</option>
+            <option value="2">Savings Account</option>
+          </select>
+        </div>
+        <br>
+        <div id="submit-button" class="submit">
+          <button>Deposit</button>
+        </div>
+
+      </form>
+
       <div id="submit-message"></div>
+      
     </div>
   </body>
 

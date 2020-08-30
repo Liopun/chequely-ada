@@ -7,6 +7,7 @@ const sdkInputElement = document.getElementById("widget-input-data");
 const inputElement = document.getElementById("input-field");
 const submitButtonElement = document.getElementById("submit-button");
 const submitMessageElement = document.getElementById("submit-message");
+const dropdownAccount = document.getElementById("");
 
 submitButtonElement.onclick = () => {
   widgetSDK.sendUserData({
